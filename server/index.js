@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 const { v4: uuid } = require('uuid');
-
+app.use(express.static( path.join( __dirname, "public" ) ) );
 app.use(express.urlencoded({extended: true}))
 
 app.use(cors())
